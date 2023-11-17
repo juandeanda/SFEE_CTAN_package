@@ -1,0 +1,13 @@
+This is the new version of the SFEE class, which belongs to the Smart Factory and Energy Efficence magazine of the Tecnológico Nacional de México/ITS Purísima del Rincón. 
+
+SFEE.cls was designed using the LaTeX document class standard. Also, SFEE.cls is accompanied by SFEE.bst, which provides the necessary elements to generate the article citations.
+
+The distribution of the SFEE package documents are:
+
+- SFEE.dtx, dtx file.
+- SFEE.bst, .bst bibliographic style for SFEE Journal.
+- SFEE_author.tex, example of article.
+- SFEE_author.pdf, result of article example.
+
+Bugs, feature requests, suggestions and
+comments may be mailed to juan.ds@purisima.tecnm.mx.
