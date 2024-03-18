@@ -1,50 +1,21 @@
 % \iffalse meta-comment
-%
-% Copyright (C) 2023 by <+author+> <<+email+>>
-% ---------------------------------------------------------------------------
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-%
-% The Current Maintainer of this work is <+maintainer+>.
-%
-% This work consists of the files SFEE.dtx and SFEE.ins
-% and the derived filebase SFEE.cls.
-%
-% \fi
-%
-% \iffalse
 %<*driver>
 \ProvidesFile{SFEE.dtx}
 %</driver>
-%<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
-%<class>\ProvidesClass{SFEE}
-%<*class>
-    [<+date+> <+version+> <+description+>]
-%</class>
-%
+%<class>\NeedsTeXFormat{LaTeX2e}
+%<class>\ProvidesClass{SFEE}[2023/11/23 version1.0]
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage{SFEE}[<+date+>]
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
 \begin{document}
-  \DocInput{SFEE.dtx}
-  \PrintChanges
-  \PrintIndex
+\DocInput{SFEE.dtx}
 \end{document}
 %</driver>
 % \fi
 %
-% \CheckSum{173}
-%
+% \CheckSum{0}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -61,85 +32,57 @@
 %   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %   Right brace   \}     Tilde         \~}
 %
-%
-% \changes{<+version+>}{<+date+>}{Converted to DTX file}
-%
-% \DoNotIndex{\newcommand,\newenvironment}
-%
-% \providecommand*{\url}{\texttt}
 % \GetFileInfo{SFEE.dtx}
-% \title{The \textsf{SFEE} package}
-% \author{<+author+> \\ \url{<+email+>}}
-% \date{\fileversion~from \filedate}
+%
+% \title{The \textsf{SFEE} class}
+%
+% \author{Juan de Anda Suárez\\
+%   Tecnológico Nacional de México/ITS Purísima del Rincón\\
+%   \texttt{juan.ds@purisima.tecnm.mx}}
+%
+% \date{\filedate}
+%
+% \changes{v1.0}{2023/11/23}{First public release}
+%
+% \makeatletter
+% \def\headlinecolor{\@normalcolor}
+% \makeatother
 %
 % \maketitle
 %
+% \StopEventually{\PrintChanges}
+%
 % \section{Introduction}
 %
-% Put text here.
+% The \textsf{SFEE} class is designed for the "Smart Factory and Efficiency Energy" journal.
+%
+% \section{Installation}
+%
+% To install the \textsf{SFEE} class, simply place the file \texttt{SFEE.cls} in a directory where \LaTeX{} can find it.
 %
 % \section{Usage}
 %
-% Put text here.
+% To use the \textsf{SFEE} class, simply use the command \verb|\documentclass{SFEE}| in your \LaTeX{} document preamble.
 %
+% \section{Documentation}
 %
-% \DescribeMacro{\headlinecolor}
+% Documentation for the \textsf{SFEE} class is provided within this \texttt{.dtx} file. Run \LaTeX{} on this file to produce the documentation.
 %
+% \section{Bug Reports and Feedback}
 %
-% \DescribeMacro{\abstract}
+% Please report any bugs or issues to the author at \texttt{juan.ds@purisima.tecnm.mx}.
 %
+% \section{License}
 %
-% \DescribeMacro{\endabstract}
+% This work is released under the LaTeX Project Public License, version 1.3c or later.
 %
-%
-% \DescribeMacro{\doi}
-%
-%
-% \DescribeMacro{\received}
-%
-%
-% \DescribeMacro{\accepted}
-%
-%
-% \DescribeMacro{\Vol}
-%
-%
-% \DescribeMacro{\ppInit}
-%
-%
-% \DescribeMacro{\ppEnd}
-%
-%
-% \DescribeMacro{\ISSN}
-%
-%
-% \DescribeMacro{\fnmark}
-%
-%
-% \DescribeMacro{\maketitle}
-%
+% \begin{filecontents*}{SFEE.cls}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{SFEE}[2023/11/23 version1.0]
 
-%
-% \StopEventually{}
-%
-% \section{Implementation}
-%
-% \iffalse
-%<*class>
-% \fi
-%
-%%% Document class for "Smart Factory and Efficence Energy" journal
-%%% Developed by Juan de Anda Suárez <juan.ds@purisima.tecnm.mx> 
-%%% Biography sfee.bst
-%
-%    \begin{macrocode}
-\NeedsTeXFormat{LaTeX2e} %File para indicar la version de latex con la que se va trabajar
-\ProvidesClass{SFEE}[2023/11/23 version1.0] %nombre de la clase de para article
 \LoadClass[journal,noindent,headline]{paper}
-%    \end{macrocode}
 %\LoadClass[10pt,letterpaper,twocolumn]{article}
-%
-%    \begin{macrocode}
+
 \usepackage{xcolor}
 \usepackage{mdframed}
 \usepackage{graphicx}
@@ -148,167 +91,61 @@
 \usepackage{yfonts,color}
 \usepackage{datetime}
 \usepackage{etoolbox}
-%    \end{macrocode}
-%
-% \begin{macro}{\headlinecolor}
-%    \begin{macrocode}
+\usepackage{ccicons}
+
 \newcommand{\headlinecolor}{\normalcolor}
-%    \end{macrocode}
-% \end{macro}
-%
-%    \begin{macrocode}
+
 \RequirePackage{xcolor}
 \definecolor{slcolor}{HTML}{882B21}
+
 \let\Abstract\abstract %color al abstract
-%    \end{macrocode}
-%
-% \begin{macro}{\abstract}
-%    \begin{macrocode}
 \long\def\abstract{\mdframed[backgroundcolor=black!12,hidealllines=true]
   \vspace*{-0.5\baselineskip}\Abstract}
 \let\endAbstract\endabstract
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\endabstract}
-%    \begin{macrocode}
 \def\endabstract{\endAbstract\endmdframed\par\bigskip}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\doi}
-%    \begin{macrocode}
+
 \newcommand\doi[1]{\renewcommand\@doi{doi:10.61794/#1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@doi}
-%    \begin{macrocode}
 \newcommand\@doi{}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\received}
-%    \begin{macrocode}
+
 \newcommand\received[1]{\renewcommand\@received{Received #1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@received}
-%    \begin{macrocode}
 \newcommand\@received{}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\accepted}
-%    \begin{macrocode}
+
 \newcommand\accepted[1]{\renewcommand\@accepted{Accepted #1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@accepted}
-%    \begin{macrocode}
 \newcommand\@accepted{}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\Vol}
-%    \begin{macrocode}
+
 \newcommand\Vol[1]{\renewcommand\@Vol{#1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@Vol}
-%    \begin{macrocode}
 \newcommand\@Vol{}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\ppInit}
-%    \begin{macrocode}
+
 \newcommand\ppInit[1]{\renewcommand\@ppInit{#1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@ppInit}
-%    \begin{macrocode}
 \newcommand\@ppInit{}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\ppEnd}
-%    \begin{macrocode}
+
 \newcommand\ppEnd[1]{\renewcommand\@ppEnd{#1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@ppEnd}
-%    \begin{macrocode}
 \newcommand\@ppEnd{}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\ISSN}
-%    \begin{macrocode}
+
 \newcommand\ISSN[1]{\renewcommand\@ISSN{#1}}
-%    \end{macrocode}
-% \end{macro}
-%
-%
-% \begin{macro}{\@ISSN}
-%    \begin{macrocode}
 \newcommand\@ISSN{}
-%    \end{macrocode}
-% \end{macro}
-%
-%\oddrunhead{SFEE, Vol. \textsc{\@Vol}, ISSN ???-???, pp. \@ppInit-\@ppEnd}
-%
-%    \begin{macrocode}
+
+\oddrunhead{SFEE, Vol. \textsc{\@Vol}, ISSN ???-???, pp. \@ppInit-\@ppEnd}
+
 \DeclareOption{onecolumn}{\OptionNotUsed}
 \DeclareOption{green}{\renewcommand{\headlinecolor}{\color{green}}}
 \DeclareOption{red}{\renewcommand{\headlinecolor}{\color{slcolor}}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
+
 \newcounter{fnote}
-%    \end{macrocode}
-%
-% \begin{macro}{\fnmark}
-%    \begin{macrocode}
 \def\fnmark[#1]{\let\comma\@empty
     \def\@fnmark{\@for\@@fnmark:=#1\do{%
     \edef\fnotenum{\@ifundefined{X@\@@fnmark}{1}{\Ref{\@@fnmark}}}%
   \unskip\comma\fnotenum\let\comma,}}%
 }
-%    \end{macrocode}
-% \end{macro}
-%
+
 %\fancyfoot[C]{\tiny Copyright \textcopyright\ 2009 All rights reserved. Duplication for purposes of any kind is strictly forbidden.}
-%
-%    \begin{macrocode}
+
 \RequirePackage{authblk}
-%    \end{macrocode}
-%
-% \begin{macro}{\maketitle}
-%    \begin{macrocode}
 \renewcommand{\maketitle}{%
     \twocolumn[%
-%    \end{macrocode}
-%    \raisebox{10pt}{\href{https://sfee.space/}{\includegraphics[width=7.61pc]{logo_sfee.png}}} \raisebox{25pt}{\href{https://purisima.tecnm.mx/}{\centering \color{blue} \textcopyright \textbf{\the\year\ Tecnológico  Nacional de México/ITS Purísima del Rincón}}} \raisebox{21pt}{\href{https://creativecommons.org/licenses/by-nc/4.0/deed.en}{\includegraphics[width=3.61pc]{CC.png}}} \par
-%    \begin{macrocode}
+        \raisebox{10pt}{\href{https://sfee.space/}{\includegraphics[width=7.61pc]{logo_sfee.png}}} \raisebox{25pt}{\href{https://purisima.tecnm.mx/}{\centering \color{blue} \textcopyright \textbf{\the\year\ Tecnológico Nacional de México/ITS Purísima del Rincón}}} \raisebox{21pt}{\href{https://creativecommons.org/licenses/by-nc/4.0/}{\color{black} \ccbync}} \par
         \fontsize{15}{15}\fontfamily{phv}\fontseries{b}%
         \fontshape{sl}\selectfont\headlinecolor
         \textbf{\@title} \vskip 4pt
@@ -317,41 +154,52 @@
         \fontshape{sl}\selectfont\headlinecolor
         \@author \vskip 4pt
         \@doi \vskip 3pt
-        %\@received ; \@accepted
-        ]%
+        \@received ; \@accepted
+    ]%
     \vskip 4pt
     \renewcommand{\AB@affillist}{}
     \renewcommand{\AB@authlist}{}
     \setcounter{authors}{0}
     \typeout{Article: \@shortauthor}
-        %\setcounter{affil}{0}%
-        \setcounter{section}{0}%
-        \setcounter{subsection}{0}%
-        \setcounter{subsubsection}{0}%
-        \setcounter{paragraph}{0}%
-        \setcounter{subparagraph}{0}%
-        \setcounter{figure}{0}%
-        \setcounter{table}{0}%
-        \setcounter{equation}{0}%
+    %\setcounter{affil}{0}%
+    \setcounter{section}{0}%
+    \setcounter{subsection}{0}%
+    \setcounter{subsubsection}{0}%
+    \setcounter{paragraph}{0}%
+    \setcounter{subparagraph}{0}%
+    \setcounter{figure}{0}%
+    \setcounter{table}{0}%
+    \setcounter{equation}{0}%
 }
-%    \end{macrocode}
-% \end{macro}
-%
-%    \begin{macrocode}
-\vfill
-%    \end{macrocode}
 %biography
 %Biography with a photograph
-%    \begin{macrocode}
-\ifdefined\biography\else\newenvironment{biography}{}{}\fi
-\ifdefined\Contribution\else\newenvironment{Contribution}{}{}\fi
-\unitlength 1in\parskip=0pt\par\parindent 1em\interlinepenalty500%
-%    \end{macrocode}
+\newcommand{\authorcontribution}[1]{%
+    \begin{wrapfigure}{l}{25mm} 
+        \includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{#1}
+    \end{wrapfigure}
+}
 
-%
-% \iffalse
-%</class>
-% \fi
-%
-% \Finale
+\newenvironment{AuthorContribution}{%
+    \section*{Author contribution}
+}{}
+
+\newcommand{\dataavailability}[2]{%
+    \section*{Data availability}
+    \small
+    #1 \\
+    \setlength{\Urlmuskip}{0mu plus 1mu}
+    \textbf{GitHub repository:} \url{#2}
+}
+\newcommand{\codeavailability}[2]{%
+    \section*{Code availability}
+    \small
+    #1 \\
+    \setlength{\Urlmuskip}{0mu plus 1mu}
+    \textbf{GitHub repository:} \url{#2}
+}
 \endinput
+%</class>
+\end{filecontents*}
+
+\end{document}
+

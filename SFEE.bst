@@ -1,7 +1,8 @@
 %%
 %% This is file `sfee.bst',
 %% generated with the docstrip utility.
-%%
+%% Author: Juan de Anda Suárez, juan.ds@purisima.tecnm.mx
+%% 
 %% The original source files were:
 %%
 %% merlin.mbs  (with options: `head,lang,seq-no,vonx,nm-init,ed-au,nmft,nmft-bf,dt-beg,yr-par,xmth,yrpp-xsp,num-xser,isbn,issn,doi,blk-com,injnl,pp,ed,abr,ednx,ord,jabr,jaa,nfss,,{}')
@@ -771,13 +772,15 @@ FUNCTION {format.issn}
 }
 
 FUNCTION {format.doi}
-{ doi empty$
-    { "" }
+{ doi "doi" bibinfo.check
+  duplicate$ empty$ 'skip$
     {
-      "\doi{" doi * "}" *
+      "doi:" swap$ *
     }
   if$
 }
+
+
 FUNCTION {select.language}
 { duplicate$ empty$
     'pop$
@@ -1278,7 +1281,8 @@ FUNCTION {format.organization.address}
 }
 
 FUNCTION {article}
-{ output.bibitem
+{ 
+  output.bibitem
   format.authors "author" output.check
   format.date "year" output.check
   date.block
@@ -1297,10 +1301,12 @@ FUNCTION {article}
     }
   if$
   format.issn output
-  format.doi output
   format.note output
+  format.doi output % Agregamos esta línea para imprimir el DOI
   fin.entry
 }
+
+
 FUNCTION {book}
 { output.bibitem
   author empty$
